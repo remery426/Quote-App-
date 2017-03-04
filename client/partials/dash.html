@@ -1,0 +1,18 @@
+<div ng-controller="userController"> 
+<h1>This is the Dashboard Page {{current_user.name}}</h1>
+
+</div>
+<div ng-controller="quoteController">
+        <table>
+
+        <tr> <th> Quote </th> <th> Author</th> <th> Date </th> <th> Likes </th> <th> Action </th> </tr>
+        <tr ng-repeat="q in all_quotes|  orderBy:'-likes' | limitTo: 3 "> 
+            <th>{{q.quote}}</th>
+            <th> <a href="#/User/{{q.author}}">{{q.author}} </a>
+            </th>
+            <th>{{q.date | date : longDate }}</th>
+            <th>{{q.likes}}</th>
+            <th> <a href="" ng-click="like(q)"> Like</a> </th>
+        </tr>
+
+    </table>

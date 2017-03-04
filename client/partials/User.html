@@ -1,0 +1,17 @@
+
+<div ng-controller="quoteController"> 
+    <h1>Welcome to the {{my_user}} quotes page</h1>
+        <table>
+
+        <tr> <th> Quote </th> <th> Author</th> <th> Date </th> <th> Likes </th> <th> Action </th> </tr>
+        <tr ng-repeat="q in user_quotes"> 
+            <th>{{q.quote}}</th>
+            <th> <a href="#/User/{{q.author}}">{{q.author}} </a>
+            </th>
+            <th>{{q.date | date : longDate }}</th>
+            <th>{{q.likes}}</th>
+            <th> <a href="" ng-click="like(q)"> Like</a> </th>
+        </tr>
+
+    </table>
+      </div>
